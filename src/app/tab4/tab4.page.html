@@ -1,8 +1,42 @@
 <ion-content>
 
 
-  <p>oi </p>
+<ion-header>
+<ion-toolbar>
+  <ion-title>Perfil de Usuário</ion-title>
+</ion-toolbar>
+</ion-header>
 
+<ion-content>
+<ion-card>
+  <ion-card-content>
+    <ion-avatar>
+      <img [src]="usuario.imagem">
+    </ion-avatar>
+    <ion-card-title>{{ usuario.nome }}</ion-card-title>
+    <ion-card-subtitle>{{ usuario.email }}</ion-card-subtitle>
+  </ion-card-content>
+</ion-card>
+
+<ion-list>
+  <ion-item>
+    <ion-label>Nome</ion-label>
+    <ion-input [(ngModel)]="usuario.nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]="usuario.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
+  </ion-item>
+</ion-list>
+
+<ion-button expand="full" (click)="atualizarPerfil()">Atualizar Perfil</ion-button>
+</ion-content>
 
 
 
